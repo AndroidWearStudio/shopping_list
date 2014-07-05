@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 /**
- * Created by Max on 05.07.2014.
+ * @author bahuma
  */
 public class DatabaseManager extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "ShoppingList.db";
