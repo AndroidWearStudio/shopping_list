@@ -11,12 +11,12 @@ public class DatabaseManager extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "ShoppingList.db";
     private static final int DATABASE_VERSION = 1;
 
-    private static final String CREATE_SHOPS = "CREATE TABLE shops (" +
+    private static final String CREATE_TABLE_SHOPS = "CREATE TABLE shops (" +
             "_id INTEGER PRIMARY KEY AUTOINCREMENT " +
             "name TEXT NOT NULL" +
             ")";
 
-    private static final String CREATE_ITEMS = "CREATE TABLE items (" +
+    private static final String CREATE_TABLE_ITEMS = "CREATE TABLE items (" +
             "_id INTEGER PRIMARY KEY AUTOINCREMENT " +
             "shop INTEGER NOT NULL " +
             "name TEXT NOT NULL " +
@@ -30,7 +30,8 @@ public class DatabaseManager extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase db) {
-
+        db.execSQL(CREATE_TABLE_SHOPS);
+        db.execSQL(CREATE_TABLE_ITEMS);
     }
 
     @Override
