@@ -2,6 +2,11 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="web.bahuma.shoppinglist.Items" >
+    <item android:id="@+id/action_add_item"
+        android:title="Add Item"
+        android:orderInCategory="50"
+        app:showAsAction="always" />
+
     <item android:id="@+id/action_settings"
         android:title="@string/action_settings"
         android:orderInCategory="100"
