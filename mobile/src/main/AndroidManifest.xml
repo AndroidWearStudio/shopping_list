@@ -9,7 +9,7 @@
         android:theme="@style/AppTheme" >
         <activity
             android:name=".ShopsActivity"
-            android:label="Shops" >
+            android:label="Shopping List" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
