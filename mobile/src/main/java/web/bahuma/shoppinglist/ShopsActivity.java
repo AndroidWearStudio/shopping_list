@@ -10,6 +10,8 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.SimpleCursorAdapter;
@@ -21,12 +23,15 @@ public class ShopsActivity extends ActionBarActivity {
     private SQLiteDatabase mDatabase;
     private AlertDialog.Builder mBuilder;
 
+    private ListView shopsList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_shops);
 
-        mHelper = new DatabaseManager(this);
+        this.mHelper = new DatabaseManager(this);
+        this.shopsList = (ListView) findViewById(R.id.list_shops);
     }
 
     @Override
@@ -101,8 +106,14 @@ public class ShopsActivity extends ActionBarActivity {
                 new int[] {android.R.id.text1}
         );
 
-        final ListView shopsList = (ListView) findViewById(R.id.list_shops);
-        shopsList.setAdapter(shopsAdapter);
+        this.shopsList.setAdapter(shopsAdapter);
+
+        this.shopsList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                Toast.makeText(parent.getContext(), "Item clicked: " + id, Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     private void addShop(String name) {
