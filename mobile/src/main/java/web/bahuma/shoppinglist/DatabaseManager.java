@@ -12,14 +12,14 @@ public class DatabaseManager extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     private static final String CREATE_TABLE_SHOPS = "CREATE TABLE shops (" +
-            "_id INTEGER PRIMARY KEY AUTOINCREMENT " +
+            "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
             "name TEXT NOT NULL" +
             ")";
 
     private static final String CREATE_TABLE_ITEMS = "CREATE TABLE items (" +
-            "_id INTEGER PRIMARY KEY AUTOINCREMENT " +
-            "shop INTEGER NOT NULL " +
-            "name TEXT NOT NULL " +
+            "_id INTEGER PRIMARY KEY AUTOINCREMENT, " +
+            "shop INTEGER NOT NULL, " +
+            "name TEXT NOT NULL, " +
             "bought BOOLEAN" +
             ")";
 
