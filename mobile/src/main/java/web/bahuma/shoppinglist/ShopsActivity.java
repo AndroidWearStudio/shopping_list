@@ -3,9 +3,9 @@ package web.bahuma.shoppinglist;
 import android.app.AlertDialog;
 import android.content.ContentValues;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
-import android.renderscript.Sampler;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -112,6 +112,12 @@ public class ShopsActivity extends ActionBarActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Toast.makeText(parent.getContext(), "Item clicked: " + id, Toast.LENGTH_LONG).show();
+
+                Intent intent = new Intent (parent.getContext(), ItemsActivity.class);
+                intent.putExtra("id", id);
+
+                startActivity(intent);
+
             }
         });
     }

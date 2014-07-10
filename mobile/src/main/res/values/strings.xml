@@ -11,5 +11,6 @@
     <string name="add_shops_message">Name:</string>
 
     <string name="shops_headline">Shops</string>
+    <string name="items_headline">Items</string>
 
 </resources>
